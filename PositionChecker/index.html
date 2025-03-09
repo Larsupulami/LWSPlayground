@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Value Checker</title>
+    <link rel="stylesheet" href="">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            display: none;
+            margin-top: 10px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .status {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter X and Y Values</h1>
+    <label for="xValue">X Value:</label>
+    <input type="number" id="xValue" />
+    <br />
+    <label for="yValue">Y Value:</label>
+    <input type="number" id="yValue" />
+    <br />
+    <button onclick="checkValues()">Check</button>
+    <div id="result" class="box"></div>
+    <p id="status" class="status"></p>
+    <script>
+        function checkValues() {
+            const x = parseFloat(document.getElementById('xValue').value);
+            const y = parseFloat(document.getElementById('yValue').value);
+            const xResult = x / 3;
+            const yResult = y / 3;
+
+            const isXValid = Math.abs(xResult - Math.floor(xResult) - 0.6666) < 0.001;
+            const isYValid = Math.abs(yResult - Math.floor(yResult) - 0.3333) < 0.001;
+
+
+            if(x>455||x<425)
+                isXValid = false;
+
+            if(y>451||y<400)
+                isYValid = false;
+
+            if (isXValid && isYValid) {
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('result').classList.add('green');
+                document.getElementById('status').innerText = "OK";
+            } else {
+                document.getElementById('result').style.display = 'none';
+                document.getElementById('result').classList.remove('green');
+                document.getElementById('status').innerText = "Not OK";
+            }
+        }
+    </script>
+</body>
+</html>
