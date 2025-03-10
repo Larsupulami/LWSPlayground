@@ -8,13 +8,13 @@
     <div class="container">
         <h1>Enter X and Y Values</h1>
         <label for="xValue">X Value:</label>
-        <input type="range" id="xValueSlider" min="425" max="455" value="440" oninput="syncXValue()" />
-        <input type="number" id="xValue" min="425" max="455" value="440" oninput="syncXSlider()" />
+        <input type="range" id="xValueSlider" min="425" max="455" value="440" step="1" oninput="syncXValue()" />
+        <input type="number" id="xValue" min="425" max="455" value="440" step="1" oninput="syncXSlider()" />
         <span id="xIndicator"></span>
         <br />
         <label for="yValue">Y Value:</label>
-        <input type="range" id="yValueSlider" min="400" max="451" value="425" oninput="syncYValue()" />
-        <input type="number" id="yValue" min="400" max="451" value="425" oninput="syncYSlider()" />
+        <input type="range" id="yValueSlider" min="400" max="451" value="425" step="1" oninput="syncYValue()" />
+        <input type="number" id="yValue" min="400" max="451" value="425" step="1" oninput="syncYSlider()" />
         <span id="yIndicator"></span>
         <br />
         <div id="result" class="box"></div>
